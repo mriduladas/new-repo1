@@ -1,12 +1,11 @@
 import React, { Component, useState } from 'react';
 import { render } from 'react-dom';
-
-
+// import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 // import logo from './logo.svg';
 import classes from './App.css';
-import person from './Person/Person';
-//import person from './Person/Person';
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
+//import Persons from '../components/Persons/Persons';
 
 
 
@@ -74,15 +73,24 @@ class App extends Component  {
     let btnClasses = [classes.button];
 if(this.state.showPersons){
   persons  = (
-    <div>
-      {
-        this.state.persons.map((person,index) => {
-          return <Person name={person.name} age={person.age} key={person.id} 
-          change ={(event) => this.nameChangedHandler(event, person.id)}
-          click= {()=> this.deletePersonHandler(index)} />
-        })
-      }
-  </div>
+
+    <Persons  persons= {this.state.persons} changed={this.nameChangedHandler} clicked={this.deletePersonHandler}/>
+
+
+    // <div>
+    //   {
+    //     this.state.persons.map((person,index) => {
+    //       return <Person name={person.name} age={person.age} key={person.id}
+    //       change ={(event) => this.nameChangedHandler(event, person.id)}
+    //       click= {()=> this.deletePersonHandler(index)} />
+
+                // return <ErrorBoundary key={person.id} ><Person name={person.name} age={person.age} 
+                // change ={(event) => this.nameChangedHandler(event, person.id)}
+                // click= {()=> this.deletePersonHandler(index)} /></ErrorBoundary>
+
+  //       })
+  //     }
+  // </div>
   )
 
   btnClasses.push(classes.Red);
