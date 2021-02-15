@@ -26,10 +26,22 @@ class App extends Component  {
     return state;
   }
 
+  shouldComponentUpdate(){
+    console.log('App.js shouldComponentUpdate');
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps,preState){
+    console.log('App.js getSnapshotBeforeUpdate');
+  }
+
   componentDidMount(){
     console.log('App.js ComponentDidMount');
   }
 
+  componentDidUpdate(){
+    console.log('App.js componentDidUpdate');
+  }
 
 
   switchNameHandler = (newName)=> {
