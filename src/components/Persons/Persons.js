@@ -1,15 +1,15 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import Person from './Person/Person';
 
-class Persons extends Component  {
+class Persons extends PureComponent  {
 
-shouldComponentUpdate(nextProps, nextState){
-console.log("Persons.js shouldComponent Update");
-return (this.props.persons!==nextProps.persons || 
-  this.props.changed!== nextProps.changed ||
-  this.props.clicked !==nextProps.clicked);
-//if it returns false , render will not be called.
-}
+// shouldComponentUpdate(nextProps, nextState){
+// console.log("Persons.js shouldComponent Update");
+// return (this.props.persons!==nextProps.persons || 
+//   this.props.changed!== nextProps.changed ||
+//   this.props.clicked !==nextProps.clicked);
+// //if it returns false , render will not be called.
+// }
 
   render(){
     console.log('Persons.js render')
