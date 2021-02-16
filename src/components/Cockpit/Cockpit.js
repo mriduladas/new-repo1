@@ -6,7 +6,12 @@ const Cockpit = (props) => {
     useEffect(()=> {
         console.log("Cockpit.js ");
         //HTTP Request...
-    })
+
+        //control when call http Request..mimicking the 
+        setTimeout(()=>{
+            alert("Saved data to cloud")
+        },1000)
+    }, [props.persons])
 
     let btnClasses = [classes.button];
 
