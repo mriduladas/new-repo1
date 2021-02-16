@@ -2,9 +2,14 @@ import React,{Component} from 'react';
 import Person from './Person/Person';
 
 class Persons extends Component  {
-  render(){
 
-    
+shouldComponentUpdate(nextProps, nextState){
+console.log("Persons.js shouldComponent Update");
+return (this.props.persons!==nextProps.persons);
+//if it returns false , render will not be called.
+}
+
+  render(){
     console.log('Persons.js render')
     return this.props.persons.map((person,index) => {
       return <Person name={person.name} age={person.age} key={person.id}

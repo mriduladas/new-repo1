@@ -13,7 +13,7 @@ const Cockpit = (props) => {
         },1000)
 
         
-    }, [props.persons])
+    }, [props.personsLength])
 
     //Call a useeffect only the first time this component is called by  passing aempty array
     useEffect(()=> {
@@ -38,10 +38,10 @@ const Cockpit = (props) => {
     }
 
     const assignedClasses =[];
-    if(props.persons.length <=2){
+    if(props.personsLength <=2){
     assignedClasses.push(classes.red);
     }
-    if(props.persons.length<= 1){
+    if(props.personsLength<= 1){
     assignedClasses.push(classes.bold);
     }
 
@@ -57,4 +57,4 @@ const Cockpit = (props) => {
     )
 }
 
-export default Cockpit;
+export default React.memo(Cockpit);
