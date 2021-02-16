@@ -4,7 +4,7 @@ import classes from './Cockpit.css'
 const Cockpit = (props) => {
 
     useEffect(()=> {
-        console.log("Cockpit.js ");
+        console.log("Cockpit.js useEffect for persons change");
         //HTTP Request...
 
         //control when call http Request..mimicking the 
@@ -12,6 +12,18 @@ const Cockpit = (props) => {
             alert("Saved data to cloud")
         },1000)
     }, [props.persons])
+
+    //Call a useeffect only the first time this component is called by  passing aempty array
+    useEffect(()=> {
+        console.log("Cockpit.js only first useEffect");
+        //HTTP Request...
+
+        //control when call http Request..mimicking the 
+        setTimeout(()=>{
+            alert("Saved data to cloud only first useEffect")
+        },1000)
+    }, [])
+
 
     let btnClasses = [classes.button];
 
