@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { render } from 'react-dom';
+import React, { Component} from 'react';
+//import { render } from 'react-dom';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit'
@@ -10,7 +10,7 @@ class App extends Component  {
 
   constructor(props){
     super(props);
-    this.  state = {persons : [
+    this.state = {persons : [
       {id:1,name:"Kaustav Das",age: 33 },
       {id:2,name:"Mridu",age: 29   },
       {id:3,name:"Chaitali",age: 52}

@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import classes from './Person.css'
 
 const person = (props) => {
+
 
     // const rnd = Math.random();
 

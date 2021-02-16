@@ -11,6 +11,8 @@ const Cockpit = (props) => {
         setTimeout(()=>{
             alert("Saved data to cloud")
         },1000)
+
+        
     }, [props.persons])
 
     //Call a useeffect only the first time this component is called by  passing aempty array
@@ -19,9 +21,13 @@ const Cockpit = (props) => {
         //HTTP Request...
 
         //control when call http Request..mimicking the 
-        setTimeout(()=>{
+        const timer=setTimeout(()=>{
             alert("Saved data to cloud only first useEffect")
         },1000)
+
+        return(()=> {
+            clearTimeout(timer);
+        })
     }, [])
 
 

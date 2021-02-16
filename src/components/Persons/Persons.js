@@ -3,6 +3,8 @@ import Person from './Person/Person';
 
 class Persons extends Component  {
   render(){
+
+    
     console.log('Persons.js render')
     return this.props.persons.map((person,index) => {
       return <Person name={person.name} age={person.age} key={person.id}
