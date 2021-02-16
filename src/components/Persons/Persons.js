@@ -5,7 +5,9 @@ class Persons extends Component  {
 
 shouldComponentUpdate(nextProps, nextState){
 console.log("Persons.js shouldComponent Update");
-return (this.props.persons!==nextProps.persons);
+return (this.props.persons!==nextProps.persons || 
+  this.props.changed!== nextProps.changed ||
+  this.props.clicked !==nextProps.clicked);
 //if it returns false , render will not be called.
 }
 
