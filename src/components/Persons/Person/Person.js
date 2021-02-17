@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import classes from './Person.css';
 import Aux from '../../../hoc/Auxillary';
 
@@ -13,11 +13,11 @@ const person = (props) => {
     console.log('Person.js render')
         return (
             // <div className={classes.Person} >
-            <Aux>
+            <Fragment>
             <p  onClick={props.click}>I am {props.name} and I am {props.age} years old</p>
             <p  >{props.children}</p>
             <input  type="text" onChange = {props.change} value={props.name} />
-            </Aux>
+            </Fragment>
             // </div>
         );
 
